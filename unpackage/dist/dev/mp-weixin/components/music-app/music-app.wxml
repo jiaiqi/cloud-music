@@ -1,0 +1,1 @@
+<view class="music-app data-v-7a130c10"><block wx:for="{{appList}}" wx:for-item="item" wx:for-index="__i0__" wx:key="label"><view class="app-item data-v-7a130c10"><image class="app-icon data-v-7a130c10" src="../../static/logo.png" mode="aspectFit"></image><view class="label data-v-7a130c10">{{''+item.label+''}}</view></view></block></view>

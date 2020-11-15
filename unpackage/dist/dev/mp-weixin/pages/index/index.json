@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "cloud-music",
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "avatar-bar": "/components/avatar-bar/avatar-bar",
+    "music-app": "/components/music-app/music-app",
+    "favorite-bar": "/components/favorite-bar/favorite-bar",
+    "play-list": "/components/play-list/play-list"
+  }
+}
