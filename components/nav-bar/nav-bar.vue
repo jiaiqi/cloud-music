@@ -25,7 +25,8 @@ export default {
 
 <style lang="scss" scoped>
 .nav-bar {
-	width: calc(100%);
+	width: 100%;
+	max-width: 750px;
 	display: flex;
 	color: #333;
 	height: 88rpx;
