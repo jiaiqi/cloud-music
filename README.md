@@ -11,3 +11,6 @@
 - pages.json 页面配置
 - README.md 项目描述
 - uni.scss 全局样式
+
+## h5端访问地址：[cc-music](https://static-fd660456-8bd3-4ef1-b347-a3e77611f9a9.bspapp.com)
+## github [cloud-music](https://github.com/jiaiqi/cloud-music)
