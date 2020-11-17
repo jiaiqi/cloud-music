@@ -54,6 +54,8 @@ $bg-white: #f8f8f8;
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	max-width: 750px;
+	margin: 0 auto;
 	.container {
 		flex: 1;
 		padding-top: 90rpx;

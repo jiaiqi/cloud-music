@@ -35,6 +35,8 @@
   -webkit-flex-direction: column;
           flex-direction: column;
   position: relative;
+  max-width: 750px;
+  margin: 0 auto;
 }
 .page-wrap .container {
   -webkit-box-flex: 1;
