@@ -2,7 +2,7 @@
 	<div class="page-wrap">
 		<nav-bar :is-white-bg="navWhiteBackground"></nav-bar>
 		<view class="container">
-			<avatar-bar></avatar-bar>
+			<avatar-bar :accountInfo="accountInfo"></avatar-bar>
 			<music-app></music-app>
 			<favorite-bar></favorite-bar>
 			<play-list ref="paylist" :nav-fixed="playlistNavFixed"></play-list>
@@ -11,19 +11,29 @@
 </template>
 
 <script>
+import {login,getAccountInfo} from '@/common/api/index.js'
+
 export default {
 	name: 'CloudMusicHome',
-	// onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代替
-	//     console.log("滚动距离为：" + e.scrollTop);
-	// },
 	data() {
 		return {
 			navWhiteBackground: false,
-			playlistNavFixed: false
+			playlistNavFixed: false,
+			accountInfo:{},
+			accountDetail:{}
 		};
 	},
+	onLoad() {
+		login().then(res=>{
+			this.accountInfo=res
+			getAccountInfo(res.account.id).then(result=>{
+				this.accountDetail = result
+				this.accountInfo = {...this.accountInfo,...result}
+			})
+		})
+	},
 	onPageScroll(e) {
-		console.log('滚动距离为：' + e.scrollTop);
+		// console.log('滚动距离为：' + e.scrollTop);
 		if (e.scrollTop >= 30) {
 			this.navWhiteBackground = true;
 		} else {
@@ -33,8 +43,8 @@ export default {
 		query
 			.select('#playNavBar')
 			.boundingClientRect(data => {
-				console.log('节点离页面顶部的距离为' + data.top);
-				if (data && data.top <= 88 && e.scrollTop >= 330) {
+				// console.log('节点离页面顶部的距离为' + data.top);
+				if (data && data.top <= 110 && e.scrollTop >= 440) {
 					this.playlistNavFixed = true;
 				} else {
 					this.playlistNavFixed = false;

@@ -58,6 +58,7 @@ export default {
 			position: fixed;
 			top: calc(var(--window-top) + 88rpx);
 			margin: 0;
+			padding: 20rpx;
 			width: 100%;
 			background-color: #f8f8f8;
 		}

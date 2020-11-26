@@ -41,4 +41,7 @@
 	/*每个页面公共css */
 	@import "common/colorui/main.css";
 	@import "common/colorui/icon.css";
+	
+	/* 引入动画库 */
+	@import "common/css/animate.min.css";
 </style>

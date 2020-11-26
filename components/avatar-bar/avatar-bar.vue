@@ -1,16 +1,16 @@
 <template>
 	<view class="avatar-bar">
-		<view class="avatar-image">
-			<image src="../../static/logo.png" class="image" mode="aspectFit"></image>
+		<view class="avatar-image" v-if="accountInfo&&accountInfo.profile">
+			<image :src="accountInfo.profile.avatarUrl" class="image" mode="aspectFit"></image>
 		</view>
 		
-		<view class="nav-to">
+		<view class="nav-to" v-if="accountInfo.profile">
 			<view class="user-info">
 				<view class="user-name">
-					jiaqi
+					{{accountInfo.profile.nickname}}
 				</view>
 				<view class="user-level">
-					Lv.8
+					Lv.{{accountInfo.level}}
 				</view>
 			</view>
 			<view class="arrow">
@@ -26,7 +26,12 @@
 			return {
 				
 			};
-		}
+		},
+		props: {
+			accountInfo: {
+				type: Object
+			},
+		},
 	}
 </script>
 
